@@ -1,0 +1,330 @@
+* {
+    font-family: monospace;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+body {
+    font-size: 18px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+div.container {
+    margin-left: 25px;
+}
+
+div.container,
+nav {
+    width: 100%;
+    margin-top: 25px;
+}
+
+header {
+    top: 0px;
+    height: 200px;
+    background-color: rgb(32, 33, 36);
+}
+
+nav {
+    top: 230px;
+    bottom: 50px;
+    background: white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+footer {
+    color: rgb(214, 214, 215);
+    bottom: 0px;
+    height: 50px;
+    background-color: rgb(32, 33, 36);
+    text-align: center;
+}
+
+
+header,
+nav,
+footer {
+    position: absolute;
+    width: 100%;
+    
+}
+
+/*Classes*/
+.align-right {
+    text-align: right;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flashImg {
+    height: 18px;
+    line-height: 18px;
+    width: auto;
+    float: right;
+    margin: 11px 10px 0 0;
+    display: block;
+}
+
+.connection_btn {
+    margin-right: 40px;
+    float: right;
+}
+
+.connection_btn_links {
+    color: rgb(255, 255, 255);
+}
+
+.connection_li {
+    list-style: none;
+    margin: 10px;
+}
+
+.connection_links {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.connections_col,
+.connections_row, 
+.rsvp_col, 
+.rsvp_row {
+    border: 1px solid;
+    padding: 10px;
+}
+
+.connections_col:first-child,
+.connections_row:first-child,
+.rsvp_col:first-child,
+.rsvp_row:first-child {
+    border: none;
+}
+
+.connections_row:first-child,
+.connections_row:nth-child(2),
+.rsvp_row:first-child,
+.rsvp_row:nth-child(2) {
+    font-weight: bold;
+}
+
+.error {
+    background: rgba(207, 20, 43, 0.9);
+}
+
+.fixed-width {
+    width: 400px;
+    text-align: center;
+}
+
+.footer_li {
+    list-style: none;
+    display: inline-block;
+    margin: 0px 50px 0px 50px;
+}
+
+.footer_links {
+    color: rgb(214, 214, 215);
+}
+
+.form_btn {
+    background-color: black;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    padding: 5px 10px 5px 10px;
+    width: 80px;
+}
+
+.form_col,
+.form_row {
+    padding: 5px;
+    margin: 10px;
+}
+
+.form_input {
+    margin: 10px 300px 10px 100px;
+    width: 150px;
+    color: black;
+}
+
+.form_label {
+    display: inline-block;
+    width: 250px;
+    text-align: right;
+}
+
+.nav_li {
+    float: right;
+    border-left: 2px solid #00573F;
+    padding: 0px 20px 0px 20px;
+    list-style: none;
+    margin-top: 50px;
+}
+
+.nav_li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+
+}
+
+.nav_li:first-child {
+    margin-right: 2.5%;
+}
+
+.nav_li:last-child {
+    border-left: none;
+}
+
+.nav_li:nth-last-child(2) {
+    border-left: none;
+}
+
+.nav_links {
+    text-decoration: none;
+    color: rgb(214, 214, 215);
+}
+
+.success {
+    background: rgba(0, 87, 63, 0.9);
+}
+
+.success,
+.error {
+    color: #fff;
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 10px 10px 10px;
+    margin: 205px auto 30px auto;
+    border-radius: 5px;
+}
+
+.topics {
+    margin-left: 5%;
+}
+
+
+/* IDs */
+#about_para {
+    text-align: center;
+}
+
+#cm-logo {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+#connection_container {
+    text-align: left;
+    margin-left: 300px;
+}
+
+#connection_image {
+    width: 100px;
+    max-width: 100%;
+    text-align: center;
+}
+
+#connection_link {
+    margin-left: 5%;
+    color: rgb(214, 214, 215);
+    float: left;
+    margin-top: 0px;
+}
+
+#connections_table,
+#rsvp_table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+#connections_ul {
+    margin-left: 5%;
+}
+
+#delete_btn {
+    margin-right: 100px;
+}
+
+#div_line {
+    width: 95%;
+    border: 2px solid #00573F;
+    background-color: #00573F;
+    border-radius: 2px;
+}
+
+#form_submit {
+    background-color: black;
+    color: rgb(214, 214, 215);
+    padding: 5px 10px 5px 10px;
+    margin: 10px 50px 10px 100px;
+    width: 150px;
+    border-radius: 3px;
+}
+
+#home_text {
+    text-align: center;
+}
+
+#home_para {
+    display: inline-block;
+    text-align: left;
+    padding: 0 100px 0 100px;
+}
+
+#logo-list {
+    float: left;
+    margin-top: 0px;
+}
+
+#new_connections_form {
+    text-align: center;
+}
+
+#user_welcome {
+    margin-right: 5%;
+    color: rgb(214, 214, 215);
+    float: right;
+    margin-top: 0px;
+}
+
+#maybe_btn {
+    background-color: rgb(57,128,237);
+}
+
+#no_btn {
+    background-color: rgb(225,71,52);
+}
+
+#yes_btn {
+    background-color: rgb(71,114,45);
+}
+
+.rsvpText {
+    margin: 0 0 20px 120px;
+}
+
+#connection_rsvp_table {
+    float: right;
+    width: 40%;
+    margin-right: 100px;
+}
+
+.emptyMsg {
+    text-align: center;
+}
+
+.form_col {
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,51 @@
+<%- include('../partials/header.ejs') %>
+    <nav>
+        <form name='new_connections_form' action="/connections" method='POST'>
+            <table class="center">
+                <tr>
+                    <td><label class='form_label' for='name'>Title:</label></td>
+                    <td><input class='form_input' type='text' id='name' name='name' placeholder ='Ex: Midterm Study Session' value='' required><br></td>
+                </tr>
+                <tr>
+                    <td class='form_label'>Topic: </td>
+                    <td><input class='form_input' type='text' id='topic' name='topic' placeholder ='Ex: Athletics.' value='' required><br></td>
+                </tr>
+                
+
+                <tr>
+                    <td><label class='form_label' for='details'>Details:</label></td>
+                    <td><input class='form_input' type='text' id='details' name='details' placeholder ='Ex: We will be studying for the midterm.' value='' required><br></td>
+                </tr>
+                <tr>
+                    <td><label class='form_label' for='date'>When:</label></td>
+                    <td><input class='form_input' type='date' id='date' name='date' value='' required><br></td>
+                </tr>
+                <tr>
+                    <td><label class='form_label' for='start_time'>Start:</label></td>
+                    <td><input class='form_input' type='time' id='start_time' name='start_time' value='' required><br></td>
+                </tr>
+                <tr>
+                    <td><label class='form_label' for='end_time'>End:</label></td>
+                    <td><input class='form_input' type='time' id='end_time' name='end_time' value='' required><br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label class='form_label' for='location'>Where:</label></td>
+                    <td><input class='form_input' type='text' id='location' name='location' placeholder ='Ex: Woodward Hall' value='' required><br></td>
+                </tr>
+                
+                <tr>
+                    <td><label class='form_label' for='image'>Image URL:</label></td>
+                    <td><input class='form_input' type='text' id='image' name='image' placeholder ='Ex: http://image.png' value='' required><br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input id='form_submit' type='submit' value='Create Connection'></td>
+                </tr>
+            </table>
+        </form>
+
+    </nav>
+    <%- include('../partials/footer.ejs') %>

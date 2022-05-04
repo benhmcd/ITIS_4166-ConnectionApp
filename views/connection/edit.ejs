@@ -1,0 +1,51 @@
+<%- include('../partials/header.ejs') %>
+<nav>
+    <form method = "POST" action = "/connections/<%=connection.id%>?_method=PUT">
+        <table class="center">
+            <tr>
+                <td><label for="name" >Name</label></td>
+                <td><input type="text" id="name" name="name" value = "<%= connection.name%>" class = "fixed-width" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="topic" >Topic</label></td>
+                <td><input type="text" id="topic" name="topic" value = "<%= connection.topic%>" class = "fixed-width" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="details" >Details</label></td>
+                <td><textarea rows="2" id="details" name="details" value = "<%= connection.details%>" class = "fixed-width" required><%= connection.details%></textarea></td>
+            </tr>
+
+            <tr>
+                <td><label for="date" >Date</label></td>
+                <td><input type="date" id="date" name="date" value = "<%= connection.date%>" class = "fixed-width" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="start_time" >Start Time</label></td>
+                <td><input type="time" id="start_time" name="start_time" value = "<%= connection.start_time%>" class = "fixed-width" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="end_time" >End Time</label></td>
+                <td><input type="time" id="end_time" name="end_time" value = "<%= connection.end_time%>" class = "fixed-width" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="location" >Location</label></td>
+                <td><input type="text" id="location" name="location" value = "<%= connection.location%>" class = "fixed-width" required></td>
+            </tr>
+            
+            <tr>
+                <td><label for="image" >Image URL</label></td>
+                <td><input type="text" id="image" name="image" value = "<%= connection.image%>" class = "fixed-width" required></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" ><button class="connection_btn form_btn">Submit</button></td>
+            </tr>
+        </table>        
+    </form>
+</nav>
+<%- include('../partials/footer.ejs') %>

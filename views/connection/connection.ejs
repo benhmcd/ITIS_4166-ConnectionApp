@@ -1,0 +1,50 @@
+<%- include('../partials/header.ejs') %>
+    <nav>
+        <div id='connection_container'>
+            <h1><%=connection.name%></h1>
+            <table id="connection_rsvp_table">
+                <% if(rsvps.length == 1) { %>
+                    <tr>
+                        <td><h3 class="rsvpText"> <%= rsvps.length %> member RSVP'd</h3></td>
+                    </tr>    
+                <% } else { %>
+                    <tr>
+                        <td><h3 class="rsvpText"> <%= rsvps.length %> members RSVP'd</h3></td>
+                    </tr>
+                <% } %>
+                
+                <%if(user == connection.host_name._id) {%>
+                    <tr>
+                        <td>
+                            <form>
+                                <button class="connection_btn form_btn" type="submit" formmethod="POST" formaction="/connections/<%=connection.id%>?_method=DELETE">Delete</button>
+                                <button class="connection_btn form_btn" type="submit" formmethod="GET" formaction="/connections/<%=connection.id%>/edit">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                <%} else {%>
+                    <tr>
+                        <td><p class="rsvpText"> RSVP to attend!</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form>
+                                <button class="connection_btn form_btn" id="maybe_btn" name="status" type="submit" formmethod="POST" formaction="/connections/<%=connection.id%>/rsvp" value="maybe">Maybe</button>
+                                <button class="connection_btn form_btn" id="no_btn" name="status" type="submit" formmethod="POST" formaction="/connections/<%=connection.id%>/rsvp" value="no">No</button>
+                                <button class="connection_btn form_btn" id="yes_btn" name="status" type="submit" formmethod="POST" formaction="/connections/<%=connection.id%>/rsvp" value="yes">Yes</button>
+                            </form>
+                        </td>
+                    </tr>
+                <%}%>
+            </table>
+            <img id='connection_image' src='<%=connection.image%>' alt="Connection Image">
+            <h2>Hosted By <%=connection.host_name.firstName + ' ' + connection.host_name.lastName%></h2>
+            <p><%=connection.date.toString()%></p>
+            <p><%=connection.start_time%> - <%=connection.end_time%></p>
+            <p><%=connection.location%></p>
+            
+            <h1>Details</h1>
+            <p><%=connection.details%></p>
+        </div>
+    </nav>
+    <%- include('../partials/footer.ejs') %>

@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs') %>
+    <nav>
+        <% var topics = [];%>
+        <%connections.forEach(connection => {%>
+            <% if(!(topics.includes(connection.topic))) {%>
+                <%topics.push(connection.topic);
+            }
+        });%>
+        
+        <%topics.forEach(topic => {%>
+            <h1 class="topics"><%= topic %></h1>
+            <ul id="connections_ul">
+                <%connections.forEach(connection => {%>
+                    <%if(connection.topic === topic) {%>
+                        <li class='connection_li'><a class='connection_links' href="/connections/<%= connection.id%>"><%= connection.name%></a></li>
+                    <% } 
+                 });%>
+            </ul>
+        <%});%>
+    </nav>
+    <%- include('../partials/footer.ejs') %>

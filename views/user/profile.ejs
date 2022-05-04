@@ -1,0 +1,53 @@
+<%- include('../partials/header.ejs')%>
+    <nav>
+        <div class="container">
+            <%if(connections.length) {%>
+                <table id="connections_table" class="center">
+                    <tr class="connections_row">
+                        <td class="connections_col"><h2><%=username%>'s Connections</h2></td>
+                    </tr>
+                    <tr class="connections_row">
+                        <td class="connections_col">Connection</td>
+                        <td class="connections_col">Category</td>
+                        <td class="connections_col">Actions</td>
+                    </tr>
+                <%connections.forEach(connection=> {%>
+                    <tr class="connections_row">
+                        <td class="connections_col"><a class='connection_links' href="/connections/<%=connection.id%>"><%=connection.name%></a></td>
+                        <td class="connections_col"><a class='connection_links' href="/connections"><%=connection.topic%></a></td>
+                        <td class="connections_col">
+                            <form>
+                                <button class="form_btn" type="submit" formmethod="GET" formaction="/connections/<%=connection.id%>/edit">Update</button>
+                                <button class="form_btn" type="submit" formmethod="POST" formaction="/connections/<%=connection.id%>?_method=DELETE">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <%});%>
+                </table>
+            <%} else {%>
+                <p>You are currently hosting no connections.</p>
+            <%}%>
+            <%if(rsvps.length) {%>
+                <table id="rsvp_table" class="center">
+                    <tr class="rsvp_row">
+                        <td class="rsvp_col"><h2><%=username%>'s RSVPs</h2></td>
+                    </tr>
+                    <tr class="connections_row">
+                        <td class="rsvp_col">Connection</td>
+                        <td class="rsvp_col">Category</td>
+                        <td class="rsvp_col">Attending</td>
+                    </tr>
+                <%rsvps.forEach(rsvp=>{%>
+                    <tr class="rsvp_row">
+                        <td class="rsvp_col"><a class='connection_links' href="/connections/<%=rsvp.connection.id%>"><%=rsvp.connection.name%></a></td>
+                        <td class="rsvp_col"><a class='connection_links' href="/connections"><%=rsvp.connection.topic%></a></td>
+                        <td class="rsvp_col"> <%=rsvp.status%></td> 
+                    </tr>
+                    <%});%>
+                </table>
+                <%} else {%>
+                    <p class="emptyMsg">You are currently have no RSVPs.</p>
+                <%}%>
+        </div>
+    </nav>
+    <%- include('../partials/footer.ejs')%>
