@@ -1,7 +1,5 @@
-const connection_model = require('../models/connection')
-const user_model = require('../models/user')
+const connection_model = require('../models/connection');
 const rsvp_model = require('../models/rsvp');
-const { connect } = require('../routes/connectionRoutes');
 
 exports.index = (req, res, next) => {
     //sends all connections
@@ -31,7 +29,7 @@ exports.show = (req, res, next) => {
     let connection_id = req.params.id;
     connection_model.findById(connection_id).populate('host_name', 'firstName lastName')
         .then(connection => {
-            rsvp_model.find({connection: connection_id, status: 'Yes'})
+            rsvp_model.find({connection: connection_id, status: 'yes'})
                 .then(rsvps => {
                     if (connection) {
                         return res.render('./connection/connection', { connection, rsvps });
@@ -75,7 +73,7 @@ exports.delete = (req, res, next) => {
             rsvp_model.deleteMany({connection: connection_id})
             .then(rsvp => {
                 req.flash('success', 'Connection and RSVPs were deleted successfully!');
-            res.redirect('/connections');
+                res.redirect('/connections');
             })
             .catch(err => next(err));
         })
@@ -99,7 +97,7 @@ exports.rsvp = (req, res, next) => {
                     .catch(err => next(err));
             } else {
                 let rsvp = req.body;
-                let connection_id = req.params.id;
+                
                 rsvp_model.findOneAndUpdate({connection: connection_id, attendee: req.session.user}, rsvp, { useFindAndModify: false, runValidators: true })
                     .then(connection => {
                         req.flash('success', 'RSVP was updated successfully!');
